@@ -25,12 +25,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class ExporterBot extends TelegramLongPollingBot {
 
-    @Value("${bot.token}")
-    private String token;
-
-    @Value("${bot.name}")
-    private String name ;
-
     private Map<String, String> bindingBy = new ConcurrentHashMap<>();
     private Map<String, Action> actions = Map.of(
             "/start", new StartAction(
@@ -46,12 +40,13 @@ public class ExporterBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return name;
+
+        return "exporter_file_bot";
     }
 
     @Override
     public String getBotToken() {
-        return token;
+        return "6655078079:AAEWNAL2GrkPnYBDH2oeOizbersTk19Nzig";
     }
 
     @Override
